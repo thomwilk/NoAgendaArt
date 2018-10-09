@@ -23,7 +23,7 @@ soup = BeautifulSoup(response, "html.parser")
 lastPage = soup.find('a', rel='next')
 lastPage = lastPage.parent
 numPagesStr = lastPage.previous_sibling.get_text()
-numPages = int(numPagesStr)
+numPages = 1 + int(numPagesStr)
 failed = []
 
 invalidChars = ['/', '\\', ':', '*', '?', '"', '\'', '<', '>', '|']
